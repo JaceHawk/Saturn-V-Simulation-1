@@ -45,7 +45,7 @@ class Body:
         self.x += self.vx * dt
         self.y += self.vy * dt
 
-        # Record Trail (Unlimited length as requested)
+        # Record Trail (Will continue to print moon's path for as long as simlation runs)
         if len(self.trail) == 0 or (abs(self.x - self.trail[-1][0]) > 1000000):
             self.trail.append((self.x, self.y))
 
@@ -77,7 +77,7 @@ class Stage:
         self.color = color
 
         if isp > 0:
-            # "Playable" Physics (3x Efficiency):
+            # More playable than real physics (Easier with 3x Efficiency):
             self.flow_rate = (thrust / (g0 * isp)) / 3.0
         else:
             self.flow_rate = 0
@@ -281,7 +281,6 @@ def create_saturn_v():
                   thrust=300000, isp=380, color=(220, 220, 220))
     s_ii = Stage("Stage 2", dry_mass=4000, fuel_mass=60000,
                  thrust=2000000, isp=340, color=(240, 240, 240))
-    # YOUR BUFFED STAGE 1
     s_ic = Stage("Stage 1", dry_mass=10000, fuel_mass=250000,
                  thrust=12000000, isp=280, color=(255, 255, 255))
     return MultistageRocket([payload, s_ivb, s_ii, s_ic])
@@ -332,3 +331,4 @@ def draw_rocket_stack(screen, rocket, camera_x, camera_y, scale, width, height):
         else:
             draw_color = stage.color
         pygame.draw.polygon(screen, draw_color, [p1, p2, p3, p4])
+
