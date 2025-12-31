@@ -12,7 +12,7 @@ A physics-based flight simulator written in Python from scratch. It models N-Bod
 
 ## How to Run
 1. Install Pygame: `pip install pygame`
-2. Run the simulation: `python Simulation.py`
+2. Run the simulation: `python Main.py`
 3. Follow the on-screen menu to select Manual, GSO, or Lunar modes.
 
 ## The Math
