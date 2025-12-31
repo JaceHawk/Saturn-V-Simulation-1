@@ -9,7 +9,7 @@ class GSOComputer:
         self.state = "LIFTOFF"
         self.message = "Auto-Sequence Start"
 
-    # UPDATE: We accept 'bodies' now, even if GSO doesn't use the Moon
+    # Accepts bodies, despite GSO not needing to use the moon
     def control(self, rocket, bodies, dt):
         # 1. Get Telemetry
         r = math.sqrt(rocket.x**2 + rocket.y**2)
@@ -289,3 +289,4 @@ class LunarComputer:
         rocket.angle += diff * 0.1
 
         return self.message
+
