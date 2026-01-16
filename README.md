@@ -1,5 +1,11 @@
 # Saturn V Autonomous Flight Simulator
 
+![Elliptical Orbit](./Saturn-V-Sim-1-Photo-1.png)
+
+---
+
+# Project Overview
+
 A physics-based flight simulator written in Python from scratch. It models N-Body gravity (Earth/Moon) and multistage rocket mechanics in 2D, featuring a custom flight computer capable of autonomous missions.
 
 ## Key Features
